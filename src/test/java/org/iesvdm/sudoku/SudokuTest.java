@@ -32,11 +32,12 @@ public class SudokuTest {
     @Test
     void fillBoardBasedInCluesRandomlyTest() {
         Sudoku sudoku = new Sudoku();
-        sudoku.fillSolvable((NotPureConsumer<Sudoku>) Sudoku::fillBoardBasedInCluesRandomly);
+        sudoku.setNumClues(43);
         assertTimeoutPreemptively(
                 ofSeconds(10), () -> {
-                    sudoku.printBoard();
+                    sudoku.fillSolvable((NotPureConsumer<Sudoku>) Sudoku::fillBoardBasedInCluesRandomly);
                 });
+        sudoku.printBoard();
         System.out.println("XXXXXXXXXSOLUCIÓNXXXXXXXXX");
         boolean solved = sudoku.solveBoard();
         System.out.println(solved);
