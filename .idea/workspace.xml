@@ -5,29 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4924cbe-497e-42d5-8035-47d9055b38bf" name="Changes" comment="inicial">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/appointment/entity/Appointment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/appointment/entity/AppointmentStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/appointment/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/appointment/entity/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/appointment/entity/ExchangeRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/appointment/entity/ExchangeStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/appointment/repository/AppointmentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/appointment/repository/ExchangeRequestRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/appointment/repository/impl/AppointmentRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/appointment/service/impl/ExchangeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/iesvdm/appointment/repository/AppointmentRepositoryImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/iesvdm/appointment/service/impl/ExchangeServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/iesvdm/sudoku/SudokuTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/NotPureConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/iesvdm/sudoku/SudokuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/iesvdm/sudoku/SudokuTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +18,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -78,33 +60,7 @@
       <recent name="org.iesvdm" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SudokuTest.failTest">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.iesvdm.sudoku.Main" />
-      <module name="pruebaud4daw" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.iesvdm.sudoku.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main_" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.iesvdm.sudoku.Main_" />
-      <module name="pruebaud4daw" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.iesvdm.sudoku.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.SudokuTest.fillBoardBasedInCluesRandomlyValidFromSetsTest">
     <configuration name="SudokuTest.failTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pruebaud4daw" />
       <extension name="coverage">
@@ -121,11 +77,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SudokuTest.fillBoardBasedInCluesFirstValidTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+      <module name="pruebaud4daw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.iesvdm.sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.iesvdm.sudoku" />
+      <option name="MAIN_CLASS_NAME" value="org.iesvdm.sudoku.SudokuTest" />
+      <option name="METHOD_NAME" value="fillBoardBasedInCluesFirstValidTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SudokuTest.fillBoardBasedInCluesRandomlyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pruebaud4daw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.iesvdm.sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.iesvdm.sudoku" />
+      <option name="MAIN_CLASS_NAME" value="org.iesvdm.sudoku.SudokuTest" />
+      <option name="METHOD_NAME" value="fillBoardBasedInCluesRandomlyTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SudokuTest.fillBoardBasedInCluesRandomlyValidFromSetsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pruebaud4daw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.iesvdm.sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.iesvdm.sudoku" />
+      <option name="MAIN_CLASS_NAME" value="org.iesvdm.sudoku.SudokuTest" />
+      <option name="METHOD_NAME" value="fillBoardBasedInCluesRandomlyValidFromSetsTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SudokuTest.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pruebaud4daw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.iesvdm.sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.iesvdm.sudoku" />
+      <option name="MAIN_CLASS_NAME" value="org.iesvdm.sudoku.SudokuTest" />
+      <option name="METHOD_NAME" value="test2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SudokuTest.fillBoardBasedInCluesRandomlyValidFromSetsTest" />
+        <item itemvalue="JUnit.SudokuTest.fillBoardBasedInCluesRandomlyTest" />
+        <item itemvalue="JUnit.SudokuTest.test2" />
         <item itemvalue="JUnit.SudokuTest.failTest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main_" />
       </list>
     </recent_temporary>
   </component>
@@ -138,8 +159,27 @@
       <option name="presentableId" value="Default" />
       <updated>1715841695703</updated>
       <workItem from="1715841696736" duration="9923000" />
-      <workItem from="1715873916029" duration="12533000" />
+      <workItem from="1715873916029" duration="12873000" />
+      <workItem from="1715938325125" duration="2903000" />
+      <workItem from="1716040828566" duration="15408000" />
     </task>
+    <task id="LOCAL-00001" summary="inicial">
+      <option name="closed" value="true" />
+      <created>1715900507274</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715900507274</updated>
+    </task>
+    <task id="LOCAL-00002" summary="inicial">
+      <option name="closed" value="true" />
+      <created>1715900535551</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715900535551</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,8 +194,33 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java</url>
-          <line>60</line>
+          <line>161</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/iesvdm/sudoku/SudokuTest.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/org/iesvdm/sudoku/SudokuTest.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java</url>
+          <line>192</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java</url>
+          <line>173</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java</url>
+          <line>171</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -168,6 +233,7 @@
       <configuration name="JUnit">
         <watch expression="board" language="JAVA" />
         <watch expression="sudoku.board" language="JAVA" />
+        <watch expression="ijSetMap.get(ij)" />
       </configuration>
     </watches-manager>
   </component>

@@ -1,10 +1,21 @@
 package org.iesvdm.sudoku;
 
+import java.util.*;
+import java.util.concurrent.Callable;
+import java.util.function.Consumer;
+import java.util.function.Function;
+
 public class Sudoku {
 
     private int gridSize = 9;
-    private int numClues = 63;
+    private int numClues = 33;
     private int[][] board;
+
+    record IJ(int i, int j) {}
+
+    private Map<IJ, Set<Integer>> mapIJNumbers = new HashMap<>();
+    private Map<Integer, Set<Integer>> mapINumbers = new HashMap();
+    private Map<Integer, Set<Integer>> mapJNumbers = new HashMap();
 
     public int getNumClues() {
         return numClues;
@@ -36,6 +47,53 @@ public class Sudoku {
     }
 
     void fillBoardBasedInCluesRandomly(){
+        board = new int[gridSize][gridSize];
+        int cont = 0;
+        int i = 0;
+        int j = 0;
+        while (cont < numClues) {
+            i = (int) (Math.random() * gridSize);
+            j = (int) (Math.random() * gridSize);
+            if (board[i][j] == 0) {
+                int number = 1 + (int)(Math.random() * (gridSize));
+                if (isValidPlacement(number, i, j)) {
+                    board[i][j] = number;
+                    cont++;
+                }
+            }
+        }
+    }
+
+    void fillBoardBasedInCluesFirstValid() throws Exception {
+        board = new int[gridSize][gridSize];
+        int cont = 0;
+        int i = 0;
+        int j = 0;
+        while (cont < numClues) {
+            i = (int) (Math.random() * gridSize);
+            j = (int) (Math.random() * gridSize);
+            if (board[i][j] == 0) {
+                    board[i][j] = getFirstValidNumber(i, j);
+                    cont++;
+            }
+        }
+    }
+
+    int getFirstValidNumber(int i, int j) throws Exception {
+        int number = 0;
+        do {
+            number++;
+        } while (number <= gridSize && !isValidPlacement(number, i, j));
+        if (number > gridSize) {
+            throw new Exception("Sin solución");
+        }
+        return number;
+    }
+
+    boolean fillBoardBasedInCluesRandomlyValidFromSets() {
+        Map<Integer, Set<Integer>> iSetMap = fillMapValid();
+        Map<Integer, Set<Integer>> jSetMap = fillMapValid();
+        Map<Integer, Set<Integer>> ijSetMap = fillMapValid();
 
         board = new int[gridSize][gridSize];
         int cont = 0;
@@ -45,11 +103,54 @@ public class Sudoku {
             i = (int) (Math.random() * gridSize);
             j = (int) (Math.random() * gridSize);
             if (board[i][j] == 0) {
-                board[i][j] = 1 + (int)(Math.random() * (gridSize));
+                board[i][j] = getValidFromSets(i, j, iSetMap, jSetMap, ijSetMap);
+                if (board[i][j] == -1) {
+                    return false;
+                }
                 cont++;
             }
         }
+        return true;
+    }
 
+    Map<Integer, Set<Integer>> fillMapValid() {
+        Map<Integer, Set<Integer>> setMap = new HashMap<>();
+        for (int i = 1; i <= gridSize; i++) {
+            Set<Integer> integerSet = new HashSet<>();
+            for (int j = 1; j <= gridSize ; j++) {
+                integerSet.add(j);
+            }
+            setMap.put(i, integerSet);
+        }
+        return setMap;
+    }
+
+
+    int getValidFromSets(int i, int j, Map<Integer, Set<Integer>> iSetMap
+            , Map<Integer, Set<Integer>> jSetMap
+            , Map<Integer, Set<Integer>> ijSetMap  ) {
+        Set<Integer> copySet = new HashSet<>(iSetMap.get(i+1));
+        copySet.retainAll(jSetMap.get(j+1));
+        int localBoxRow = i/3;
+        int localBoxColumn = j/3;
+        int ij = localBoxRow*3 + localBoxColumn;
+        copySet.retainAll(ijSetMap.get(ij+1));
+        int seleccion = (int) (Math.random()* copySet.size());
+        Iterator<Integer> it = copySet.iterator();
+        if (it.hasNext()) {
+            int valor = it.next();
+            int indice = 0;
+            while (indice < seleccion && it.hasNext()) {
+                valor = it.next();
+                indice++;
+            }
+            iSetMap.get(i+1).remove(valor);
+            jSetMap.get(j+1).remove(valor);
+            ijSetMap.get(ij+1).remove(valor);
+            return valor;
+        } else {
+           return -1;
+        }
     }
 
     void fillBoardBasedInCluesRandomlySolvable() {
@@ -59,10 +160,41 @@ public class Sudoku {
                 sudoku = new Sudoku();
                 sudoku.gridSize=gridSize;
                 sudoku.copyBoard(board);
-        }while(sudoku.solveBoard());
+        }while(!sudoku.solveBoard());
     }
 
-    void fillBoardSolvable() {
+    void fillSolvable(NotPureConsumer<Sudoku> consumer) {
+        Sudoku sudoku = null;
+        boolean continuarPorEx;
+        do {
+            continuarPorEx = false;
+            try {
+                consumer.accept(this);
+            } catch (Exception e) {
+                continuarPorEx = true;
+                continue;
+            }
+            sudoku = new Sudoku();
+            sudoku.gridSize=gridSize;
+            sudoku.copyBoard(board);
+        }while( continuarPorEx || !sudoku.solveBoard());
+    }
+
+    void fillSolvable(Function<Sudoku, Boolean> function) {
+        Sudoku sudoku = null;
+        boolean filled;
+        do {
+            filled = function.apply(this);
+            if (!filled) {
+                continue;
+            }
+            sudoku = new Sudoku();
+            sudoku.gridSize=gridSize;
+            sudoku.copyBoard(board);
+        }while(!filled || !sudoku.solveBoard());
+    }
+
+    void fillBoardRandomlySolvable() {
         Sudoku sudokuAux = new Sudoku();
         sudokuAux.setGridSize(gridSize);
         do {
@@ -71,7 +203,7 @@ public class Sudoku {
         } while(!sudokuAux.solveBoard());
     }
 
-    void fillBoardUnsolvable() {
+    void fillBoardRandomlyUnsolvable() {
         Sudoku sudokuAux = new Sudoku();
         sudokuAux.setGridSize(gridSize);
         do {
