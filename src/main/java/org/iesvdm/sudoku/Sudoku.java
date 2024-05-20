@@ -4,13 +4,10 @@ import java.util.*;
 import java.util.function.Function;
 
 public class Sudoku {
-
     private int gridSize = 9;
     private int numClues = 33;
     private int[][] board;
-
     record IJ(int i, int j) {}
-
     private Map<IJ, Set<Integer>> mapIJNumbers = new HashMap<>();
     private Map<Integer, Set<Integer>> mapINumbers = new HashMap();
     private Map<Integer, Set<Integer>> mapJNumbers = new HashMap();
@@ -73,6 +70,32 @@ public class Sudoku {
             if (board[i][j] == 0) {
                     board[i][j] = getFirstValidNumber(i, j);
                     cont++;
+            }
+        }
+    }
+
+    void fillBoardBasedInClues50Ramdonly50FirstValid() throws Exception {
+        board = new int[gridSize][gridSize];
+        int cont = 0;
+        int i = 0;
+        int j = 0;
+        while (cont < numClues/2) {
+            i = (int) (Math.random() * gridSize);
+            j = (int) (Math.random() * gridSize);
+            if (board[i][j] == 0) {
+                int number = 1 + (int)(Math.random() * (gridSize));
+                if (isValidPlacement(number, i, j)) {
+                    board[i][j] = number;
+                    cont++;
+                }
+            }
+        }
+        while (cont < numClues) {
+            i = (int) (Math.random() * gridSize);
+            j = (int) (Math.random() * gridSize);
+            if (board[i][j] == 0) {
+                board[i][j] = getFirstValidNumber(i, j);
+                cont++;
             }
         }
     }

@@ -51,4 +51,14 @@ public class SudokuTest {
         sudoku.solveBoard();
         sudoku.printBoard();
     }
+
+    @Test
+    void fillBoardBasedInClues50Ramdonly50FirstValidTest() {
+        Sudoku sudoku = new Sudoku();
+        sudoku.fillSolvable((NotPureConsumer<Sudoku>) Sudoku::fillBoardBasedInClues50Ramdonly50FirstValid);
+        sudoku.printBoard();
+        System.out.println("XXXXXXXXX");
+        sudoku.solveBoard();
+        sudoku.printBoard();
+    }
 }

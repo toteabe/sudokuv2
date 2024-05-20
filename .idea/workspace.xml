@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4924cbe-497e-42d5-8035-47d9055b38bf" name="Changes" comment="inicial">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/iesvdm/sudoku/SudokuTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/iesvdm/sudoku/SudokuTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +59,7 @@
       <recent name="org.iesvdm" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SudokuTest.fillBoardBasedInCluesRandomlyValidFromSetsTest">
+  <component name="RunManager" selected="JUnit.SudokuTest.fillBoardBasedInClues50Ramdonly50FirstValidTest">
     <configuration name="SudokuTest.failTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="pruebaud4daw" />
       <extension name="coverage">
@@ -69,6 +71,22 @@
       <option name="PACKAGE_NAME" value="org.iesvdm.sudoku" />
       <option name="MAIN_CLASS_NAME" value="org.iesvdm.sudoku.SudokuTest" />
       <option name="METHOD_NAME" value="failTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SudokuTest.fillBoardBasedInClues50Ramdonly50FirstValidTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="pruebaud4daw" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.iesvdm.sudoku.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.iesvdm.sudoku" />
+      <option name="MAIN_CLASS_NAME" value="org.iesvdm.sudoku.SudokuTest" />
+      <option name="METHOD_NAME" value="fillBoardBasedInClues50Ramdonly50FirstValidTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,6 +158,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SudokuTest.fillBoardBasedInClues50Ramdonly50FirstValidTest" />
         <item itemvalue="JUnit.SudokuTest.fillBoardBasedInCluesRandomlyValidFromSetsTest" />
         <item itemvalue="JUnit.SudokuTest.fillBoardBasedInCluesRandomlyTest" />
         <item itemvalue="JUnit.SudokuTest.test2" />
@@ -158,7 +177,7 @@
       <workItem from="1715841696736" duration="9923000" />
       <workItem from="1715873916029" duration="12873000" />
       <workItem from="1715938325125" duration="2903000" />
-      <workItem from="1716040828566" duration="15645000" />
+      <workItem from="1716040828566" duration="17259000" />
     </task>
     <task id="LOCAL-00001" summary="inicial">
       <option name="closed" value="true" />
@@ -184,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716204093194</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="inicial">
+      <option name="closed" value="true" />
+      <created>1716204133624</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716204133624</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -199,7 +226,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java</url>
-          <line>159</line>
+          <line>182</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -214,17 +241,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java</url>
-          <line>190</line>
+          <line>213</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java</url>
-          <line>171</line>
+          <line>194</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/iesvdm/sudoku/Sudoku.java</url>
-          <line>169</line>
+          <line>192</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
